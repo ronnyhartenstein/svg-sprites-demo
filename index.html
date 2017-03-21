@@ -1,0 +1,41 @@
+<html>
+<header>
+<script>
+// dataType: "text",
+fetch('icons_svgsprite.svg')
+    .then((resp) => {
+        return resp.text()
+    })
+    .then((data) => {
+        console.log(data)
+        const str = '<div id="svgicons" style="display:none;"><?xml version="1.0">' + data + '</div>'
+        const html = new DOMParser().parseFromString(str, 'text/html')
+        console.log(html)
+        document.body.prepend(html.body.firstChild)
+    })
+</script>
+
+<style>
+i svg {
+    height: 40px;
+    width: 40px;
+}
+i.rot svg {
+    fill: lightgreen;
+}
+i.blau svg {
+    fill: blue;
+}
+i.hover:hover svg {
+    fill: red;
+}
+</style>
+</header>
+
+<body>
+<h1>SVG Sprites Demo</h1>
+<p>Lupe: <i><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#glass"></use></svg></i></p>
+<p>Schließen: <i class="rot"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></i></p>
+<p><button>im Button: <i><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus"></use></svg></i></button></p>
+<p>Thinline: <i class="hover rot"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chat"></use></svg></i></p>
+</body>
