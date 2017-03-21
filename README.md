@@ -1,9 +1,12 @@
 # SVG Sprites Demo
 
+Demoing of SVG Sprites for the [talk "SVG Sprites in a nutshell"](https://docs.google.com/presentation/d/1uDJ-7ygM_sWY3tvDtKI2Bs3AG846fICYdmXepCn-NdY/edit?usp=sharing).
+
 ## Run
 
-Im Repo ist alles dabei was für die Demo benötigt wird.
-Es braucht echtes Web, via Browser klappt `fetch()` nicht.
+The repo contains everything to run the demo.
+You have to use real web, it doesn't work directly via `file://` because of `fetch()` (well, untested).
+Just use e.g. PHPs build in web server.
 
 ```
 php55 -S 0.0.0.0:8080
@@ -11,17 +14,21 @@ php55 -S 0.0.0.0:8080
 
 ## Build
 
-Die SVG-Sprite wird mit Grunt gebaut.
+The SVG-Sprite are build via Grunt.
 
-NPM Pakete installieren:
+Install NPM packages:
 
 ```
 yarn
 ```
 
-Grunt ausführen:
+Run Grunt:
 
 ```
 grunt
 ```
 
+
+## Licence
+
+MIT
